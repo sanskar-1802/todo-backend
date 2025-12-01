@@ -28,4 +28,9 @@ app.post('/todos',async(req,res)=>{
 
 app.delete('/todos/:id',async(req,res)=>{
     await Todo.finfByIdAndDelete(req.params.id)
+    res.json({
+        message: "deleted"
+    })
 })
+
+app.listen(process.env.PORT, ()=> console.log("Server is running on port", process.env.PORT))
